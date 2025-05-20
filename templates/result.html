@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登録結果</title>
+</head>
+<body>
+    <h1>登録されたオーダー</h1>
+    <table border="1">
+        <tr><th>選手名</th><th>ポジション</th><th>打順</th></tr>
+        {% for player in selected_players %}
+        <tr>
+            <td>{{ player.name }}</td>
+            <td>{{ player.position }}</td>
+            <td>{{ player.order }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">戻る</a>
+</body>
+</html>

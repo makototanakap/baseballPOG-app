@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>POG選手登録</title>
+</head>
+<body>
+    <h1>支配下選手一覧</h1>
+    <form method="post">
+        <table border="1">
+            <tr>
+                <th>選手名</th>
+                <th>ポジション</th>
+                <th>打順</th>
+            </tr>
+            {% for player in players %}
+            <tr>
+                <td>{{ player["選手名"] }}</td>
+                <td><input type="text" name="position_{{ player['選手名'] }}"></td>
+                <td><input type="number" name="order_{{ player['選手名'] }}" min="1" max="9"></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button type="submit">登録</button>
+    </form>
+</body>
+</html>
